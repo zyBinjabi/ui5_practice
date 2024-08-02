@@ -1,0 +1,99 @@
+<mvc:View
+    controllerName="practice.controller.WizardPractice"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page_id_WizardPractice"
+        title="WizardPractice"
+    >
+        <content>
+            <Wizard
+                id="myWizard"
+                finishButtonText="Complete"
+                
+            >
+                <WizardStep
+                    icon="sap-icon://action"
+                    title="Step 1"
+                >
+                    <!-- Content for Step 1 -->
+                </WizardStep>
+                <WizardStep
+                    icon="sap-icon://action-settings"
+                    title="Step 2"
+                >
+                    <!-- Content for Step 2 -->
+                </WizardStep>
+                <WizardStep
+                    icon="sap-icon://activate"
+                    title="Step 3"
+                >
+                    <!-- Content for Step 3 -->
+                </WizardStep>
+                                <WizardStep
+                    icon="sap-icon://activate"
+                    title="Step 3"
+                >
+                    <!-- Content for Step 3 -->
+                </WizardStep>
+                <WizardStep
+                    icon="sap-icon://activate"
+                    title="Step 3"
+                >
+                    <!-- Content for Step 3 -->
+                </WizardStep>
+                <WizardStep
+                    icon="sap-icon://activate"
+                    title="Step 3"
+                >
+                    <!-- Content for Step 3 -->
+                </WizardStep>
+                <WizardStep
+                    icon="sap-icon://activate"
+                    title="Step 3"
+                >
+                    <!-- Content for Step 3 -->
+                </WizardStep>
+                <WizardStep
+                    icon="sap-icon://activate"
+                    title="Step 3"
+                >
+                    <!-- Content for Step 3 -->
+                </WizardStep>
+                <WizardStep
+                    icon="sap-icon://activate"
+                    title="Step 3"
+                >
+                    <!-- Content for Step 3 -->
+                </WizardStep>
+                <WizardStep
+                    icon="sap-icon://activate"
+                    title="Step 3"
+                >
+                    <!-- Content for Step 3 -->
+                </WizardStep>
+                <WizardStep
+                    icon="sap-icon://activate"
+                    title="Step 3"
+                >
+                    <!-- Content for Step 3 -->
+                </WizardStep>
+                <WizardStep
+                    icon="sap-icon://activate"
+                    title="Step 3"
+                >
+                    <!-- Content for Step 3 -->
+                </WizardStep>
+                <WizardStep
+                    icon="sap-icon://activate"
+                    title="Step 3"
+                >
+                    <!-- Content for Step 3 -->
+                </WizardStep>
+
+            </Wizard>
+        </content>
+    </Page>
+</mvc:View>

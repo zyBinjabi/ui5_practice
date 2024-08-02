@@ -1,0 +1,141 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "practice",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.14.1",
+      "toolsId": "5d7017d2-0f65-4945-b212-e963af82e5ae"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.126.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "practice.i18n.i18n"
+        }
+      },
+      "dataT1": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/dataT1.json"
+      },
+      "navList": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/navList.json"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "practice.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteHome",
+          "pattern": ":?query:",
+          "target": [
+            "TargetHome"
+          ]
+        },
+        {
+          "name": "RouteSmartTableOne",
+          "pattern": "RouteSmartTableOne",
+          "target": [
+            "TargetSmartTableOne"
+          ]
+        },
+        {
+          "name": "RouteWizardPractice",
+          "pattern": "RouteWizardPractice",
+          "target": [
+            "TargetWizardPractice"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetHome": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Home",
+          "viewName": "Home"
+        },
+        "TargetSmartTableOne": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "SmartTableOne",
+          "viewName": "SmartTableOne"
+        },
+        "TargetWizardPractice": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "WizardPractice",
+          "viewName": "WizardPractice"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "practice.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

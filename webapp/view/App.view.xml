@@ -1,0 +1,29 @@
+<mvc:View controllerName="practice.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:ff="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt">
+    <App id='App_id'>
+        <tnt:ToolPage id="toolPage">
+            <tnt:header>
+                <ff:ShellBar title="NADEC Operational Excellence" secondTitle="" showMenuButton="true" homeIcon="./image/nadec_logo.png" homeIconTooltip="Nadec" menuButtonPressed="onMenuButtonPress" showNotifications="true" notificationsPressed="openNotification" notificationsNumber="4" id="idImage">
+                    <ff:additionalContent>
+                        <OverflowToolbarButton id='OverflowToolbarButton1_id' press="onClickLight" tooltip="Light Mode" icon="sap-icon://light-mode" />
+                        <OverflowToolbarButton id='OverflowToolbarButton2_id' press="triggerIntroJs" tooltip="Start tour to understand the functionality" icon="sap-icon://learning-assistant" type="Default" />
+                    </ff:additionalContent>
+                    <ff:profile>
+                        <Avatar id='Avatar_id' initials="UI" />
+                    </ff:profile>
+                </ff:ShellBar>
+            </tnt:header>
+            <tnt:sideContent>
+                <core:Fragment fragmentName="practice.fragment.mainFragment.SideNavigation" type="XML" />
+            </tnt:sideContent>
+            <tnt:mainContents>
+                <NavContainer id="app" />
+            </tnt:mainContents>
+        </tnt:ToolPage>
+    </App>
+</mvc:View>

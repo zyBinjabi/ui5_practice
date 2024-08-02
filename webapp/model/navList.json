@@ -1,0 +1,19 @@
+{
+  "navigation": [
+    {
+      "title": "Home",
+      "icon": "sap-icon://home",
+      "key": "RouteHome"
+    },
+    {
+      "title": "SmarTable One",
+      "icon": "sap-icon://e-care",
+      "key": "RouteSmartTableOne"
+    },
+    {
+      "title": "WizardPractice",
+      "icon": "sap-icon://e-care",
+      "key": "RouteWizardPractice"
+    }
+  ]
+}
