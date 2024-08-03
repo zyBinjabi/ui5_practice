@@ -105,6 +105,27 @@
           "target": [
             "TargetWizardPractice"
           ]
+        },
+        {
+          "name": "RouteLogin",
+          "pattern": "RouteLogin",
+          "target": [
+            "TargetLogin"
+          ]
+        },
+        {
+          "name": "RouteDynamicPage",
+          "pattern": "RouteDynamicPage",
+          "target": [
+            "TargetDynamicPage"
+          ]
+        },
+        {
+          "name": "RoutePageF",
+          "pattern": "RoutePageF",
+          "target": [
+            "TargetPageF"
+          ]
         }
       ],
       "targets": {
@@ -128,6 +149,27 @@
           "clearControlAggregation": false,
           "viewId": "WizardPractice",
           "viewName": "WizardPractice"
+        },
+        "TargetLogin": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Login",
+          "viewName": "Login"
+        },
+        "TargetDynamicPage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "DynamicPage",
+          "viewName": "DynamicPage"
+        },
+        "TargetPageF": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "PageF",
+          "viewName": "PageF"
         }
       }
     },

@@ -1,0 +1,36 @@
+<mvc:View controllerName="practice.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page_id_Login" title="Login">
+        <content >
+            <VBox
+        class="sapUiSmallMargin"
+        justifyContent="Center"
+        alignItems="Center">
+        
+        <Text text="Login" class="sapUiTitle"/>
+        
+        <Input
+            id="emailInput"
+            placeholder="Email"
+            type="Email"
+            width="100%"
+            required="true"/>
+        
+        <Input
+            id="passwordInput"
+            placeholder="Password"
+            type="Password"
+            width="100%"
+            required="true"/>
+        
+        <Button
+            id="loginButton"
+            text="Login"
+            press="onLogin"/>
+        
+    </VBox>
+
+        </content>
+    </Page>
+</mvc:View>

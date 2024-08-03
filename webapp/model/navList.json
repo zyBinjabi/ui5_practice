@@ -14,6 +14,21 @@
       "title": "WizardPractice",
       "icon": "sap-icon://e-care",
       "key": "RouteWizardPractice"
+    },
+    {
+      "title": "Login",
+      "icon": "sap-icon://e-care",
+      "key": "RouteLogin"
+    },
+    {
+      "title": "DynamicPage",
+      "icon": "sap-icon://e-care",
+      "key": "RouteDynamicPage"
+    },
+    {
+      "title": "PageF",
+      "icon": "sap-icon://e-care",
+      "key": "RoutePageF"
     }
   ]
 }

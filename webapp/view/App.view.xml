@@ -6,7 +6,7 @@
     xmlns:core="sap.ui.core"
     xmlns:tnt="sap.tnt">
     <App id='App_id'>
-        <tnt:ToolPage id="toolPage">
+        <tnt:ToolPage id="toolPage" visible="true">
             <tnt:header>
                 <ff:ShellBar title="NADEC Operational Excellence" secondTitle="" showMenuButton="true" homeIcon="./image/nadec_logo.png" homeIconTooltip="Nadec" menuButtonPressed="onMenuButtonPress" showNotifications="true" notificationsPressed="openNotification" notificationsNumber="4" id="idImage">
                     <ff:additionalContent>
@@ -25,5 +25,8 @@
                 <NavContainer id="app" />
             </tnt:mainContents>
         </tnt:ToolPage>
+
+
+
     </App>
 </mvc:View>
