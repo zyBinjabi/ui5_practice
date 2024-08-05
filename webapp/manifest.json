@@ -125,6 +125,19 @@
           "pattern": "RoutePageF",
           "target": [
             "TargetPageF"
+          ]},
+          {
+          "name": "RoutePageT",
+          "pattern": "RoutePageT",
+          "target": [
+            "TargetPageT"
+          ]
+        },
+        {
+          "name": "RoutePageT2",
+          "pattern": "RoutePageT2",
+          "target": [
+            "TargetPageT2"
           ]
         }
       ],
@@ -170,6 +183,20 @@
           "clearControlAggregation": false,
           "viewId": "PageF",
           "viewName": "PageF"
+        },
+        "TargetPageT": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "PageT",
+          "viewName": "PageT"
+        },
+        "TargetPageT2": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "PageT2",
+          "viewName": "PageT2"
         }
       }
     },

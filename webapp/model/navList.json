@@ -29,6 +29,16 @@
       "title": "PageF",
       "icon": "sap-icon://e-care",
       "key": "RoutePageF"
+    },
+    {
+      "title": "PageT",
+      "icon": "sap-icon://e-care",
+      "key": "RoutePageT"
+    },
+    {
+      "title": "PageT2",
+      "icon": "sap-icon://e-care",
+      "key": "RoutePageT2"
     }
   ]
 }

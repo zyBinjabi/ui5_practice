@@ -1,0 +1,8 @@
+<mvc:View controllerName="practice.controller.PageT2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page_id_PageT2" title="PageT2">
+        <content >
+        </content>
+    </Page>
+</mvc:View>
