@@ -5,7 +5,8 @@ const { exit } = require('process');
 const getContent = require('./create_controller');
 const getViewContent = require('./create_view'); // Import the function to get view content
 
-const getAppContent = require('./create_app');
+const getAppViewContent = require('./create_appView');
+const getAppControllerContent = require('./create_appController');
 const getNavigationListFragmentContent = require('./create_NavigationListFragment');
 const getSideNavigationFragmentContent = require('./create_SideNavigationFragment');
 
@@ -46,9 +47,11 @@ class FileManager {
         }
     }
 
-    async createFile(filePath, content, fileType) {
+    async createFile(filePath, content, fileType, forceOverwrite = false) {
         try {
-            if (await fs.stat(filePath).catch(() => false)) {
+            const fileExists = await fs.stat(filePath).catch(() => false);
+    
+            if (fileExists && !forceOverwrite) {
                 console.error(`${fileType} file '${filePath}' already exists. Skipping write operation.`);
             } else {
                 await fs.writeFile(filePath, content);
@@ -59,27 +62,39 @@ class FileManager {
         }
     }
 
-    async initApp(){
+    insertSpaces(str) {
+        return str.replace(/([a-z])([A-Z])/g, '$1 $2');
+    }
+
+    async initApp(isForceOverWrite){
         try {
             let manifestJson = await this.getManifestJson(this.manifestPath);
             const appId = manifestJson['sap.app']['id'];
 
-            const appFilePath = path.join(this.viewPath, `App.view.xml`);
+            const appViewFilePath = path.join(this.viewPath, `App.view.xml`);
+            const appControllerFilePath = path.join(this.controllerPath, `App.controller.js`);
+            
             const sideNavigationFragmentFilePath = path.join(this.mainFragmentPath, `NavigationList.fragment.xml`); 
             const navigationListFragmentFilePath = path.join(this.mainFragmentPath, `SideNavigation.fragment.xml`); 
 
             await this.ensureDirectoryExists(this.viewPath);
             await this.ensureDirectoryExists(this.mainFragmentPath);
 
-            const appContent = getAppContent("INIT", appId);
+            const appViewContent = getAppViewContent("App", appId);
+            const appControllerContent = getAppControllerContent("App", appId);
+
             const navigationListFragmentContentContent = getNavigationListFragmentContent("INIT", appId);
             const sideNavigationFragmentContentContent = getSideNavigationFragmentContent("INIT", appId);
 
-            await this.createFile(appFilePath, appContent, 'Controller');
+            await this.createFile(appViewFilePath, appViewContent, 'View', isForceOverWrite);
+            await this.createFile(appControllerFilePath, appControllerContent, 'Controller', isForceOverWrite);
+
             await this.createFile(sideNavigationFragmentFilePath, navigationListFragmentContentContent, 'Fragment');
             await this.createFile(navigationListFragmentFilePath, sideNavigationFragmentContentContent, 'Fragment');
 
-            await updateAndWriteJsonFile("INIT", this.manifestPath, this.navListPath);
+            await this.createFile(this.navListPath, `{"navigation": []}`, 'Model');
+
+            await updateAndWriteJsonFile("Home", this.manifestPath, this.navListPath);
 
         } catch (error) {
             console.error('Error in main function:', error);
@@ -103,14 +118,17 @@ class FileManager {
             await this.ensureDirectoryExists(this.controllerPath);
             await this.ensureDirectoryExists(this.viewPath);
 
-            const controllerContent = getContent(this.fileName, appId);
-            const viewContent = getViewContent(this.fileName, appId);
+            // let fileNmaeWithSpace = this.insertSpaces(this.fileName);
+            let fileNmaeWithSpace = this.fileName;
+
+            const controllerContent = getContent(fileNmaeWithSpace, appId);
+            const viewContent = getViewContent(fileNmaeWithSpace, appId);
 
             await this.createFile(controllerFilePath, controllerContent, 'Controller');
             await this.createFile(viewFilePath, viewContent, 'View');
 
             if (this.isRoute === "r") {
-                await updateAndWriteJsonFile(this.fileName, this.manifestPath, this.navListPath);
+                await updateAndWriteJsonFile(fileNmaeWithSpace, this.manifestPath, this.navListPath);
             }
         } catch (error) {
             console.error('Error in main function:', error);
@@ -127,7 +145,8 @@ console.log({fileName})
 console.log({isRoute})
 const fileManager = new FileManager(fileName, isRoute);
 if (fileName == 'init'){
-    fileManager.initApp()
+    let isForceOverWrite = isRoute === 'FOW' ? true : false
+    fileManager.initApp(isForceOverWrite)
 }else{
     fileManager.main();
 }

@@ -1,12 +1,11 @@
 <SideNavigation
-	id="SideNavigation_id"
 	xmlns="sap.tnt"
 	xmlns:core="sap.ui.core"
 	expanded="false"
 	selectedKey="{/selectedKey}"
 	itemSelect="onItemSelect"
 >
-	<NavigationList id="NavigationList_id" items="{
+	<NavigationList  items="{
 		path: 'navList>/navigation'
 	}">
 		<core:Fragment

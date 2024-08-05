@@ -39,7 +39,7 @@ function updateModel(viewName, jsonData ) {
   let models = jsonData["sap.ui5"].models;
 
   // Check if the name already exists in the routes array
-  const existingModel = models.find(Model => Model.name === "navList");
+  const existingModel = models["navList"] !== undefined
   if (existingModel) {
     console.log("Model name already exists. Aborting update.");
     return jsonData; // Return the unchanged data

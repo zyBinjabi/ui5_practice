@@ -57,8 +57,6 @@
             oPopover.openBy(oButton);
           });
         }
-  
-  
       });
     }
   );
