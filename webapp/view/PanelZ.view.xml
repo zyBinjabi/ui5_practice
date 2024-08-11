@@ -1,0 +1,35 @@
+<mvc:View controllerName="practice.controller.PanelZ"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+>
+    <Panel width="auto" class="" accessibleRole="Region" visible='false'>
+        <headerToolbar>
+            <OverflowToolbar>
+                <Title text="Panel with picture" />
+            </OverflowToolbar>
+        </headerToolbar>
+        <content>
+            <l:HorizontalLayout>
+                <Image src="{img>/products/pic1}" width="10em" />
+            </l:HorizontalLayout>
+            <Text
+                text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat" />
+        </content>
+    </Panel>
+
+    <Panel width="auto" class="">
+        <headerToolbar>
+            <OverflowToolbar>
+                <Title text="Header" />
+                <ToolbarSpacer />
+                <Button icon="sap-icon://settings" />
+                <Button icon="sap-icon://drop-down-list" />
+            </OverflowToolbar>
+        </headerToolbar>
+        <content>
+            <Text
+                text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat" />
+        </content>
+    </Panel>
+</mvc:View>

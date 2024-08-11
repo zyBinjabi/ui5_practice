@@ -1,0 +1,34 @@
+{
+  "navigation": [
+    {
+      "title": "Home",
+      "icon": "sap-icon://e-care",
+      "key": "RouteHome"
+    },
+    {
+      "title": "TestPage",
+      "icon": "sap-icon://e-care",
+      "key": "RouteTestPage"
+    },
+    {
+      "title": "Login",
+      "icon": "sap-icon://e-care",
+      "key": "RouteLogin"
+    },
+    {
+      "title": "GridContainer",
+      "icon": "sap-icon://e-care",
+      "key": "RouteGridContainer"
+    },
+    {
+      "title": "NavContainer",
+      "icon": "sap-icon://e-care",
+      "key": "RouteNavContainer"
+    },
+    {
+      "title": "PanelZ",
+      "icon": "sap-icon://e-care",
+      "key": "RoutePanelZ"
+    }
+  ]
+}

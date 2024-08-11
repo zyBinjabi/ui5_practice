@@ -1,0 +1,179 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "practice",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.14.1",
+      "toolsId": "d6619072-659d-402d-a984-94910ab3dd30"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.127.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "practice.i18n.i18n"
+        }
+      },
+      "navList": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/navList.json"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "practice.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteHome",
+          "pattern": ":?query:",
+          "target": [
+            "TargetHome"
+          ]
+        },
+        {
+          "name": "RouteTestPage",
+          "pattern": "RouteTestPage",
+          "target": [
+            "TargetTestPage"
+          ]
+        },
+        {
+          "name": "RouteLogin",
+          "pattern": "RouteLogin",
+          "target": [
+            "TargetLogin"
+          ]
+        },
+        {
+          "name": "RouteGridContainer",
+          "pattern": "RouteGridContainer",
+          "target": [
+            "TargetGridContainer"
+          ]
+        },
+        {
+          "name": "RouteNavContainer",
+          "pattern": "RouteNavContainer",
+          "target": [
+            "TargetNavContainer"
+          ]
+        },
+        {
+          "name": "RoutePanelZ",
+          "pattern": "RoutePanelZ",
+          "target": [
+            "TargetPanelZ"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetHome": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Home",
+          "viewName": "Home"
+        },
+        "TargetTestPage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "TestPage",
+          "viewName": "TestPage"
+        },
+        "TargetLogin": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Login",
+          "viewName": "auth.Login"
+        },
+        "TargetGridContainer": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "GridContainer",
+          "viewName": "GridContainer"
+        },
+        "TargetNavContainer": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "NavContainer",
+          "viewName": "NavContainer"
+        },
+        "TargetPanelZ": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "PanelZ",
+          "viewName": "PanelZ"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "practice.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
